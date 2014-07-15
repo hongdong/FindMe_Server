@@ -1,0 +1,13 @@
+Ext.define("FM.model.CircleModel",{
+	extend:'Ext.data.Model',
+	fields:[
+		{name:'cId',type:"string"},
+		{name:'cName',type:"string"},
+		{name:'cLogo',type:"string"},
+		{name:'cDescription',type:"string"},
+		{name:'cUserCount',type:"int"},
+		{name:'cUserMaxCount',type:"int"},
+		{name:'cActNumber',type:"int"},
+		{name:'cType',type:"int"}
+	]
+});

@@ -1,0 +1,20 @@
+
+/**
+ * 添加用户
+ *
+ */
+
+//		StringBuilder sqlUser = new StringBuilder();
+//		sqlUser.append("INSERT INTO t_user (userId, userNickName,userSex, userPhoto, userScNo,");
+//		sqlUser.append("userScName, userDeptNo, userDeptName,userGrade,userSignature, userHide,");
+//		sqlUser.append("userRegisterTime, userQqOpenId, userSinaOpenId, userLastLoginTime, userLoginCount,");
+//		sqlUser.append("userPublishActNumber, userJoinActNumber, userHelpIndex, userHelpNumber,");
+//		sqlUser.append("userJoinHelpNumber, userPostNumber, userAuth, userLastAddIndexTime) ");
+//		sqlUser.append("VALUES ('"+user.getUserId()+"', '"+user.getUserNickName()+"','"+user.getUserSex()+"',");
+//		sqlUser.append("'"+user.getUserPhoto()+"','"+user.getUserScNo()+"','"+user.getUserScName()+"',");
+//		sqlUser.append("'"+user.getUserDeptNo()+"','"+user.getUserDeptName()+"','"+user.getUserGrade()+"',");
+//		sqlUser.append("'"+user.getUserSignature()+"',"+user.getUserHide()+",'"+user.getUserRegisterTime()+"',");
+//		sqlUser.append("'"+user.getUserQqOpenId()+"','"+user.getUserSinaOpenId()+"','"+user.getUserLastLoginTime()+"',");
+//		sqlUser.append(""+user.getUserLoginCount()+","+user.getUserPublishActNumber()+","+user.getUserJoinActNumber()+",");
+//		sqlUser.append(""+user.getUserHelpIndex()+","+user.getUserHelpNumber()+","+user.getUserJoinHelpNumber()+",");
+//		sqlUser.append(""+user.getUserPostNumber()+","+user.getUserAuth()+","+user.getUserLastAddIndexTime()+") ");

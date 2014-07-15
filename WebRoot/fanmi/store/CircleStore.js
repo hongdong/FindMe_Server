@@ -1,0 +1,21 @@
+
+Ext.define("FM.store.CircleStore",{
+	extend:"Ext.data.Store",
+	model:'FM.model.CircleModel',
+	proxy:{
+		api:{
+			update:'../../data/act/sysActList.do',
+			remove:'../../data/act/sysActList.do'
+		},
+		type:'ajax',
+		url:"../../data/circle/clist.do",
+		reader:{
+			type:'json',
+			root:"topics"
+		},
+		wiriter:{
+			type:"json"
+		}
+	},
+	autoLoad:false
+});

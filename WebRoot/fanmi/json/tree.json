@@ -1,0 +1,52 @@
+{
+    //"checked": false, 
+    "id": "00", 
+    "leaf": false, 
+    "text": "root",
+    "children": [
+        {
+            //"checked": false, 
+            "children": [
+                {
+                    //"checked": false, 
+                    "children": [ ], 
+                    "id": "actPublish", 
+                    "leaf": true, 
+                    "text": "发布活动"
+                }, 
+                {
+                    //"checked": false, 
+                    "children": [ ], 
+                    "id": "actList", 
+                    "leaf": true, 
+                    "text": "活动查询"
+                }
+            ], 
+            "id": "actMenu", 
+            "leaf": false, 
+            "text": "活动"
+        }, 
+        {
+            //"checked": false, 
+            "children": [
+                {
+                    //"checked": false, 
+                    "children": [ ], 
+                    "id": "taskPublish", 
+                    "leaf": true, 
+                    "text": "任务发布"
+                }, 
+                {
+                    //"checked": false, 
+                    "children": [ ], 
+                    "id": "taskList", 
+                    "leaf": true, 
+                    "text": "任务查询"
+                }
+            ], 
+            "id": "taskMenu", 
+            "leaf": false, 
+            "text": "任务"
+        }
+    ]
+}

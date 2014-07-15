@@ -1,0 +1,110 @@
+/* 初始化页面元素 */
+html,body,div,p,span,ol,li,h1,h2,hr {margin:0;padding:0;zoom:1;}
+body{background-color: #F0F0EF;width:100%;font: 14px/1.5 "Microsoft YaHei","微软雅黑",arial,simsun,"宋体";}
+ol{list-style:none;}
+hr{height: 1px;border:none;border-top:3px solid #F0F0F0;margin-top:10px; }
+/* 首页 */
+.homeBody {background:url(images/home_images/top_cnt.png) no-repeat;}
+/* 顶部样式 */
+/* 导航栏样式 */
+.top{width:100%;height:674px; border:0px solid red;overflow: visible;}
+.topDown{width:1346px;height:675px; border:0px solid red;margin: 0 auto;}
+.topMenueBar{width:100%;height:80px; border-bottom:0px solid red;position: relative;background:url(images/home_images/top.png) no-repeat; }/* background:url(images/home_images/top.png) no-repeat; */
+.logo{float:left;margin:15px 0px 0px 100px; width:350px;height:65px; border:0px solid yellow;background:url(images/home_images/logo.png) no-repeat; }
+.menue{line-height:80px;overflow:hidden;width:546px;height:80px;border:0px solid yellow; }
+.menue li{list-style:none;float: left;margin-left: 0px;}
+.menue li a{text-align:center;text-decoration: none;display:block;width:90px;height:80px;line-height:80px;}
+.visited {background:url(images/home_images/selected.png) no-repeat;}
+.menueColor {color: #39A6A3;}
+.visitedColor {color: #F7F5EE;}
+
+.menueMiddle{width:546px;height:80px;margin-left:10px; border:0px solid red;overflow: hidden;position: relative;}
+.topBarMiddle{width:1048px;height:80px;margin:0 auto; border:0px solid red;overflow: visible;}
+
+/* 下载区样式  */
+.topMiddle{width:1048px;height:592px;margin:0 auto; border:0px solid red;overflow: visible;}
+.downloadDiv{width:600px;height:100%; border:0px solid red; }
+.phoneDiv{width:444px;height:100%; border-color:green; border:0px solid green;position: relative; }
+.download{width:400px;height:320px; border:0px solid red;margin-top:282px;margin-left:50px; background:url(images/home_images/act.png) no-repeat 20px 0px; }
+.download li{list-style:none;height:77px;}
+.downloadIphone {border:0px solid black; margin:8px 0px 0px 10px;display:block; width: 360px;height: 77px;line-height: 77px;text-align: center;background:url(images/home_images/download_iphone.png) no-repeat;}
+.downloadAndroid {border:0px solid black; margin:55px 0px 0px 10px;display:block; width: 360px;height: 77px;line-height: 77px;text-align: center;background:url(images/home_images/download_android.png) no-repeat;}
+.phone {width:363px;height:405px; border:0px solid red;position:absolute;top: 190px; right: -15px;background:url(images/home_images/phone.png) no-repeat ;}
+
+/* 中间部分样式  */
+.centerMiddle{width:100%;height:1475px;border:0px solid red;overflow: visible;background-color:#F0F0F0;}
+.centerBlock{width:1346px;height:1475px;border:0px solid red;overflow: visible;margin: 0px auto;}
+#columnLeft{width:149px;height:1475px;border:0px solid red;overflow: hidden;background-color:#F0F0F0;}
+#columnRight{width:149px;height:1475px;border:0px solid red;overflow: hidden;background-color:#F0F0F0;}
+.cntRowbottum{width:1048px;height:20px;background-color:#F0F0F0;; border:0px solid black;margin-top: 15px;}
+.cntRowTop{width:1048px;height:20px;background-color:#F0F0F0;; border:0px solid black;}
+.content{width:1048px;height:1475px;background-color:#FFFFFF; border:0px solid black;margin: 0px auto;}
+.cntRow{width:945px;height:350px;border:0px solid black; overflow: visible; margin:5px auto; }
+.cntRow .leftFirstPic{margin-left:0px;width:430px;height:350px;background-color:blue; border:0px solid black;background:url(images/home_images/features.png) no-repeat 0px 50px;}
+.cntRow .rightFirstPic {width:420px;height:350px;background-color:blue; border:0px solid black;background:url(images/home_images/features.png) no-repeat -350px -5px;}
+.cntRow .leftSecondPic {width:430px;height:350px; border:0px solid black;background:url(images/home_images/features.png) no-repeat 0px -300px;}
+.cntRow .rightSecondPic {width:420px;height:350px;background-color:blue; border:0px solid black;background:url(images/home_images/features.png) no-repeat -355px -350px;}
+.cntRow .rightText {width:510px;height:350px; border:0px solid black;text-align: left;vertical-align: bottom;}
+.cntRow .rightText h2 {border:0px solid black;margin-top:140px;margin-left:90px; }
+.cntRow .rightText p {border:0px solid black;margin-top:10px;font-size: 16px;margin-left:90px; }
+.cntRow .leftText {width:520px;height:350px; border:0px solid black;text-align: left;vertical-align: bottom;}
+.cntRow .leftText h2 {border:0px solid black;margin-top:100px;margin-left: 100px; }
+.cntRow .leftText p {border:0px solid black;margin-top:10px;font-size: 16px ;margin-left: 100px;}
+
+/* 底部样式 */
+.foot {width:100%;height:150px;border:0px solid red;background-color:#FFFFFF; }
+.footMiddle {width:1048px;height:150px; border:0px solid red;background-color:#FFFFFF;margin:0 auto; }
+.footBlock {width:1346px;height:150px; border:0px solid red;background-color:#FFFFFF;margin:0 auto; }
+.footTop {height:50px; border:0px solid red;background-color:#FFFFFF;margin:20px auto;line-height: 50px;}
+.footButttom {height:60px; border:0px solid red;background-color:#FFFFFF;width:45%;text-align:center; margin:0 auto;}
+.footTop ol {width:45%; margin:0 auto;border: 0px solid black;height: 50px;}
+.footBlock li{list-style:none;float: left;margin-left: 50px; }
+.footBlock a{color: #5A5655;font-weight: bold;font-size: 14px; text-decoration: none;}
+.footButttom a {font-weight: normal;}
+.footButttom p {color: #5A5655;font-weight: normal;}
+
+/* 关于番迷样式 */
+.aboutFmTop{width:100%;height:80px; border:0px solid red;overflow: visible; background-color:#F0F0F0;background:url(images/home_images/top.png) no-repeat; }/* background-color:#F0F0F0; */
+.aboutFmMiddle{width:100%;height:1150px;border:0px solid red;overflow: visible;background-color:#F0F0F0;m}
+.aboutFmBlock{width:1346px;height:1150px;border:0px solid red;overflow: visible;margin: 0px auto;}
+.aboutFmCnt{width:1048px;height:1150px;border-top:1px solid white;overflow: visible;margin: 0px auto;background-color:#FFFFFF;}
+.aboutFmCntFirstRow{width:1048px;height:260px;border:0px solid black;overflow: visible;margin: 0px auto;}
+.aboutFmCntSecondRow{width:1048px;height:890px;border:0px solid green;overflow: visible;margin: 0px auto;background:url(images/home_images/about_fm.png) no-repeat 100px 0px;}
+/* .aboutFmCntFirstRow p {text-align: center;margin:20px auto; font-size: 14px;color: black;font-weight: bold;} */
+.aboutFmBody{background-color:#F0F0F0; }
+.aboutFmH2 {text-align: center;margin-top: 50px;}
+.aboutFmFootTop {margin-top: 20px;}
+.aboutFmCntFirstRow hr{width: 90%;margin: 0 auto;}
+
+/* 关于我们 */
+.aboutUs{width:1048px;height:890px;border:0px solid green;overflow: visible;margin: 0px auto;background:url(images/home_images/about_us.png) no-repeat 45px 0px;}
+#ourTeam {text-align: center;margin:20px auto; font-size: 20px;color: black;font-weight: bold;}
+.aboutUsCntFirstRow{width:1048px;height:150px;border:0px solid black;overflow: visible;margin: 0px auto;}
+.aboutUsCntFirstRow hr{width: 80%;margin: 0 auto;}
+
+/* 加入我们 */
+.joinUsSecondRow{width:1048px;height:890px;border:0px solid green;overflow: visible;margin: 0px auto;}
+.joinUsSecondRow hr {width: 90%;margin: 0 auto;}
+#hr2 {width: 30%;margin: 0 auto;}
+
+/* 联系我们 */
+.phoneUsRow {width:700px;height:550px;border:0px solid green;overflow: visible;margin: 0px auto;}
+.joinUsLogo {width:700px;height:260px;border:0px solid red;background: url(images/home_images/phone_us_logo.png) no-repeat 235px 30px;}
+
+/* 番迷动态 */
+.dynamicFmRow {width:1048px;height:300px;border:0px solid green;overflow: visible;margin: 0px auto;}
+.dynamicFmHr {width:1048px;height:10px;border:0px solid green;overflow: visible;margin: 0px auto;}
+.dynamicLeftColumn {width:300px;height:240px;border:0px solid red;overflow: visible;background: url(images/home_images/dynamic_date.png) no-repeat 100px 55px;}
+.dynamicRightColumn {width:740px;height:240px;border:0px solid black;overflow: visible;}
+.pFirstLine {text-align: left;margin:20px auto; font-size: 12px;color: #C2CBD5;font-weight: bold;}
+.pSecondLine {text-align: left;margin:20px auto; font-size: 14px;color: black;}
+.dynamicFmH2 {text-align: left;margin-top: 50px;}
+.dynamicFmHr hr {width: 80%;margin: 0 auto;}
+
+/* 公共部分样式 */
+.clear{clear:both; }
+.clearLeft{clear:left; }
+.clearRight{clear:right; }
+.leftFloat{float: left;}
+.rightFloat{float: right;}
+.p {text-align: center;margin:20px auto; font-size: 14px;color: black;}

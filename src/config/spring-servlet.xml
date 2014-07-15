@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+      http://www.springframework.org/schema/beans/spring-beans-3.2.xsd  
+      http://www.springframework.org/schema/context  
+      http://www.springframework.org/schema/context/spring-context.xsd  
+      http://www.springframework.org/schema/mvc  
+      http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+      http://www.springframework.org/schema/aop   
+      http://www.springframework.org/schema/aop/spring-aop-3.2.xsd ">
+	<!-- http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd -->
+
+	<!-- 避免IE执行AJAX时,返回JSON出现下载文件 -->
+	<!-- 这个很简单可以使用spring mvc自带的jackson 1、web工程lib中加入jackson所需jar包：jackson-core-asl-1.9.9.jar、jackson-mapper-asl-1.9.9.jar 
+		2、在applicationContext.xml中加入jackson的配置 -->
+	<!-- <bean id="mappingJacksonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"> 
+		<property name="supportedMediaTypes"> <list> <value>text/html;charset=UTF-8</value> 
+		</list> </property> </bean> -->
+
+	<!-- db.properties设置数据源配置文件路径 -->
+	<!-- <context:property-placeholder location="/WEB-INF/db.properties" /> -->
+
+	<!-- apache.dbcp连接池的配置 -->
+	<!-- <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" 
+		destroy-method="close" lazy-init="false"> <property name="driverClassName" 
+		value="${jdbc.driver}"></property> <property name="url" value="${jdbc.url}"></property> 
+		<property name="username" value="${jdbc.user}"></property> <property name="password" 
+		value="${jdbc.password}"></property> 最大活动连接数 <property name="maxActive" value="${jdbc.maxActive}"></property> 
+		最大可空闲连接数 <property name="maxIdle" value="${jdbc.maxIdle}"></property> 最大可等待连接数 
+		<property name="maxWait" value="${jdbc.maxWait}"></property> 默认的提交方式（如果不需要事务可以设置成true，在实际应用中一般设置为false,默认为false） 
+		<property name="defaultAutoCommit" value="${jdbc.defaultAutoCommit}"></property> 
+		</bean> -->
+	<!-- jdbcTemplate注入 -->
+	<!-- <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"> 
+		<property name="dataSource"> <ref bean="dataSource" /> </property> </bean> -->
+	<!-- 注解扫描包 -->
+	<context:component-scan base-package="com.fm" />
+
+	<!-- 开启注解 -->
+	<mvc:annotation-driven />
+
+	<!-- 视图分解器 -->
+	<bean id="viewResoler"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/JSP"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+	<!-- 配置拦截器-开始 -->
+	<mvc:interceptors>
+		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" />
+		<mvc:interceptor>
+			<mvc:mapping path="/data/**" />
+			<bean class="com.fm.interceptor.SessionInterceptor">
+				<property name="excludeUrls">
+					<list>
+						<value>/data/user/grant_user.do</value>
+						<value>/data/user/rgst_user.do</value>
+						<value>/data/school/ini.do</value>
+						<value>/data/school/dept_list.do</value>
+						<value>/data/post/post_list.do</value>
+						<value>/data/post/post_msg_list.do</value>
+						<value>/data/user/user_match.do</value>
+					</list>
+				</property>
+			</bean>
+		</mvc:interceptor>
+
+		<!-- <mvc:interceptor> <mvc:mapping path="/back/**" /> <bean class="com.taupst.interceptor.AdminRequestInterceptor"> 
+			<property name="excludeUrls"> <list> <value>/back/admin/login</value> <value>/back/admin/loginout</value> 
+			<value>/back/admin/tologin</value> </list> </property> </bean> </mvc:interceptor> -->
+
+	</mvc:interceptors>
+	<!-- 配置拦截器-结束 -->
+
+	<!-- 配置事务管理器 -->
+	<!-- <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager" 
+		p:dataSource-ref="dataSource" /> -->
+	<!-- 使用注解支持事务 -->
+	<!-- <tx:annotation-driven transaction-manager="transactionManager" /> -->
+
+	<!-- 通过AOP配置提供事务增强，让service包下所有Bean的所有方法拥有事务 -->
+	<!-- <tx:advice id="txAdvice" transaction-manager="transactionManager"> 
+		<tx:attributes> <tx:method name="*Transaction" rollback-for="RuntimeException" 
+		read-only="false" propagation="REQUIRED"/> <tx:method name="" read-only="true" 
+		/> </tx:attributes> </tx:advice> <aop:config proxy-target-class="true"> <aop:pointcut 
+		id="serviceMethod" expression="execution(* com.fm.service..*.*(..))" /> <aop:advisor 
+		pointcut-ref="serviceMethod" advice-ref="txAdvice" /> </aop:config> -->
+	<!-- spring线程-开始 -->
+	<bean id="taskExecutor"
+		class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+		<!-- 核心线程数 -->
+		<property name="corePoolSize" value="10" />
+		<!-- 最大线程数 -->
+		<property name="maxPoolSize" value="50" />
+		<!-- 队列最大长度 >=mainExecutor.maxSize -->
+		<property name="queueCapacity" value="1000" />
+		<!-- 线程池维护线程所允许的空闲时间 -->
+		<property name="keepAliveSeconds" value="300" />
+		<!-- 线程池对拒绝任务(无线程可用)的处理策略 -->
+		<property name="rejectedExecutionHandler">
+			<bean class="java.util.concurrent.ThreadPoolExecutor$CallerRunsPolicy" />
+		</property>
+	</bean>
+	<!-- spring线程-结束 -->
+
+	<!-- 文件上传 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="utf-8" />
+		<property name="maxUploadSize" value="10485760000" />
+		<property name="maxInMemorySize" value="40960" />
+	</bean>
+
+</beans>  
